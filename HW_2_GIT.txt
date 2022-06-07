@@ -1,0 +1,92 @@
+1. На локальном репозитории сделать ветки для:
+- Postman
+- Jmeter
+- CheckLists
+- Bug Reports
+- SQL
+- Charles
+- Mobile testing
+	
+	git branch Postman
+	git branch Jmeter
+	git branch CheckLists
+	git branch Bug_Reports
+	git branch SQL
+	git branch Charles 
+	git branch Mobile_testing
+
+2. Запушить все ветки на внешний репозиторий
+	git push -u origin Postman
+	git push -u origin Jmeter
+	git push -u origin CheckLists
+	git push -u origin Bug_Reports
+	git push -u origin SQL
+	git push -u origin Charles 
+	git push -u origin Mobile_testing
+
+3. В ветке Bug Reports сделать текстовый документ со структурой баг репорта
+	git checkout Bug_Reports 
+	vim bug_report.txt
+	Insert
+	1.Title
+	2.Steps_to_reproduce:
+		Step1
+    		Step2
+    		Step3
+	3.Expected_result: the_result_we_need
+	4.Actual_result: the_result_of_which_must_be
+ 	5.Priority_factor:
+      		Low
+      		Medium
+	     	High
+	6.Severity_factor:
+    		Trivial
+   		Minor
+    		Major
+    		Critical
+    		Blocker
+ 	7.Environment
+	esc
+	:wq
+
+4. Запушить структуру багрепорта на внешний репозиторий
+	git add .
+	git commit -m "create file bug_report.txt
+	git push
+
+5. Вмержить ветку Bug Reports в Main
+	git checkout main
+	git merge Bug_Reports
+
+6. Запушить main на внешний репозиторий.
+	git push
+
+7. В ветке CheckLists набросать структуру чек листа.
+	git checkout CheckLists
+	vim checklist.txt
+	Insert
+	1) Environment
+	2) Test date
+	3) Tester
+	4) Test Type
+	5) Checking
+	6) Result
+	esc
+	:wq
+
+8. Запушить структуру на внешний репозиторий
+	git add checklist.txt
+	git commit -m "create file checklist.txt"
+	git push
+
+9. На внешнем репозитории сделать Pull Request ветки CheckLists в main
+	1) Зайти в репозиторий на GitHub в котором создавались ветки
+	2) В верхней части страницы кликнуть на надпись "Pull request"
+	3) Кликнуть "Compare & pull request"
+	4) Добавить коментарий для pull request в поле Leave a comment
+	5) Кликнуть "Create pull request"  
+	6) Кликнуть "Merge pull request"
+	7) Кликнуть "Confim merge"
+
+10. Синхронизировать Внешнюю и Локальную ветки Main
+	git pull
